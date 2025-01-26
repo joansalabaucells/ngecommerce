@@ -1,9 +1,8 @@
  <!-- Buscar regalo por ID -->
-
 <div class="regalo-buscador">
   <h1>Buscar posible regalo por ID</h1>
 
-  <!--  1. El usuario añade un número para buscar la receta -->
+  <!--  1. El usuario añade un número para buscar el regalo -->
   <div class="formulario-busqueda">
     <label for="regalo-id">Ingresa el ID de la regalo:</label>
     <input
@@ -16,12 +15,12 @@
     <button (click)="buscarRegalo()">Buscar Regalo</button>
   </div>
 
-  <!-- 5bis. Se muestra mensaje de error si no se encuentra la receta -->
+  <!-- 5bis. Se muestra mensaje de error si no se encuentra el regalo -->
   <div *ngIf="mensajeError" class="error">
     <p>{{ mensajeError }}</p>
   </div>
 
-  <!-- 5. Se muestran los detalles de la receta si se encuentra -->
+  <!-- 5. Se muestran los detalles del regalo si se encuentra -->
   <div *ngIf="regalo" class="detalles-regalo">
     <h2>Detalles del Regalo</h2>
     <p><strong>ID:</strong> {{ receta.id }}</p>
@@ -33,7 +32,7 @@
  <!-- Buscar regalos por nombre -->
  <!-- 1-2: el usuario introduce un nombre en el input que a través del two way binding se asigna a la propiedad nombreRegalo -->
   <div class="formulario-busqueda">
-    <label for="regalo-nombre">Ingresa el nombre o parte del nombre de la receta:</label>
+    <label for="regalo-nombre">Ingresa el nombre o parte del nombre del regalo:</label>
     <input
       id="regalo-nombre"
       type="text"

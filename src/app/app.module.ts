@@ -4,12 +4,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeEcommerceComponent } from './templates/home-ecommerce/home-ecommerce.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ContactoComponent } from './templates/contacto/contacto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeEcommerceComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContactoComponent,
   ],
   imports: [
     BrowserModule,

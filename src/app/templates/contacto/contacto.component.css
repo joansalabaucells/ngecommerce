@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.phone-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    height: 10rem;
+    background-color: #00aeff;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+}
+
+.phone-box .icon {
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.phone-box .number {
+    font-weight: bold;
+}

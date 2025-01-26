@@ -1,21 +1,96 @@
 :root {
-    --font-family: 'Arial, sans-serif';
-    --primary-color: #00aeff;
-    --primary-hover: #0056b3;
-    --disabled-color: #ccc;
-    --background-color: #f9f9f9;
-    --border-color: #ccc;
-    --text-color: #333;
-    --text-completed: green;
+  --font-family: 'Arial, sans-serif';
+  --primary-color: #00aeff;
+  --primary-hover: #0056b3;
+  --disabled-color: #ccc;
+  --background-color: #f9f9f9;
+  --border-color: #ccc;
+  --text-color: #333;
+  --text-completed: green;
 
-    --padding-small: 0.5rem;
-    --padding-medium: 1rem;
-    --padding-large: 2rem;
+  --padding-small: 0.5rem;
+  --padding-medium: 1rem;
+  --padding-large: 2rem;
 
-    --font-size-base: 1rem;
-    --font-size-small: 0.875rem;
-    --font-size-large: 1.25rem;
+  --font-size-base: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-large: 1.25rem;
 
-    --max-width: 500px;
+  --max-width: 500px;
+}
+.titulo{
+  text-align: justify;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5rem;
+  margin-left: 1rem;
+}
+
+@keyframes destellar {
+  0%, 100% {
+    opacity: 1; /* Totalmente visible */
   }
-  
+  50% {
+    opacity: 0; /* Invisible en el medio del ciclo */
+  }
+}
+
+/* Aplicar la animación al texto */
+.destello {
+  font-size: 1rem;
+  color: #ff0000; 
+  text-align: center;
+  animation: destellar 1s infinite; /* 1 segundo de duración, infinito */
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+    /* Ajusta el padding de la contenedor */
+  }
+
+  /* Reducción de los márgenes y tamaños para pantallas pequeñas */
+  .row {
+    margin-bottom: 1.5rem;
+  }
+
+  img {
+    width: 100%;
+    /* Asegura que las imágenes no sobrepasen el ancho */
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding: 0 30px;
+    /* Agrega algo de padding */
+  }
+
+}
+
+@media (max-width: 768px) {
+
+ 
+  .container {
+    padding: 0 15px;
+    /* Ajusta el padding de la contenedor */
+  }
+
+  /* Reducción de los márgenes y tamaños para pantallas pequeñas */
+  .row {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    font-size: 1.4rem;
+    /* Ajuste el tamaño de las etiquetas */
+  }
+
+  img {
+    width: 100%;
+    /* Asegura que las imágenes no sobrepasen el ancho */
+    height: auto;
+  }
+}
+

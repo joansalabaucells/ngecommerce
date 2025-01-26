@@ -1,5 +1,6 @@
+import { ProductosService } from './../../../../../ngecommerce_mio_malo/src/app/services/productos.service';
 import { Component, OnInit } from '@angular/core';
-import { RecetasService } from 'src/app/services/recetas.service';
+import { ProductosServiceService } from 'src/app/services/productos.service'; //NO LO COGE,seguros que es por falta de algo que no sé ver
 import { ModooscuroService } from 'src/app/services/modooscuro.service';
 
 
@@ -38,7 +39,7 @@ Características:
   - Se utiliza para inicializar propiedades de la clase y para la inyección de dependencias.
   - Se ejecuta antes de que Angular termine de configurar el componente.
   - Se utiliza para inyectar servicios o dependencias, y asignar valores iniciales simples que no dependan de la interacción con el DOM o de datos externos. */
-constructor(private recetasService: RecetasService, private modooscuro: ModooscuroService) {}
+constructor(private productosService: ProductosService, private modooscuro: ModooscuroService) {}
 //Todos los servicios que se inyectan en un componente deben ser declarados en el mismo constructor del componente. Solo tendremos un constructor en un componente.
 
 /* El ngOnInit es un método del ciclo de vida del componente en Angular que pertenece a la interfaz OnInit.
@@ -55,13 +56,13 @@ Se utiliza para:
   - Configurar suscripciones. */
 
 ngOnInit() {
-  this.recetas = this.recetasService.getRecetas();
+  this.productos = this.productosService.getProductos();
 }
 
 buscarReceta() {
   // 4. Se busca la receta por ID utilizando el servicio
   if (this.recetaId !== null) {
-    this.receta = this.recetasService.getRecetaById(this.recetaId);
+    this.receta = this.productosService.getProcuctoById(this.productoId);
 
     // Si no se encuentra la receta, tenemos que mostrar un mensaje de error
     if (!this.receta) {
@@ -73,12 +74,12 @@ buscarReceta() {
   }
 }
 
-buscarRecetasNombre() {
+buscarProductosNombre() {
   // 4-2. Ya existe un valor para nombrereceta. Al desencadenar el método se busca la receta por ID utilizando el servicio
   if (this.nombreReceta.trim()) {
     //trim(): No modifica la cadena original, devuelve una nueva cadena sin espacios iniciales ni finales.
 
-    this.recetasEncontradas = this.recetasService.getRecetasByNombre(this.nombreReceta);
+    this.recetasEncontradas = this.productosService.getProductosByNombre(this.nombreReceta);
   //--> Este método devuelve un array con TODAS las recetas que contienen el texto ingresado por el usuario.
     // Si no se encuentran recetas, mostrar un mensaje de error
     if (this.recetasEncontradas.length === 0) {
